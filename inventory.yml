@@ -1,0 +1,9 @@
+all:
+  hosts:
+    target1:
+      ansible_user: synnefo
+      ansible_host: 172.16.99.25
+      ansible_become: yes
+      ansible_become_method: sudo
+      ansible_become_pass: asd123.
+      ansible_ssh_private_key_file: /home/leeshalulu/.ssh/id_rsa
