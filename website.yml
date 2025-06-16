@@ -1,0 +1,20 @@
+---
+- name: remove apache webserver and website
+  hosts: target1
+  tasks: 
+  - name: stop and disable apache webserver
+    service:
+      name: httpd
+      state: stopped
+      enabled: false
+  
+  - name: remove website content
+    file:
+      path: /var/www/html/index.html
+      state: absent
+
+  - name: Remove Apache package (optional)
+    yum:
+      name: httpd
+      state: absent
+ 
